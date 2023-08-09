@@ -1,0 +1,49 @@
+<p>Ejemplo PIPES nativos de angular</p>
+<!--Fechas-->
+<p>Pipes para fechas</p>
+<p>Fecha sin Pipe: {{dob}}</p>
+<p>Fecha con Pipe date basico (dob | date): {{dob | date}}</p>
+<p>Fecha con Pipe date basico (dob | date:'dd/MM/yyyy'): {{dob | date: 'dd/MM/yyyy'}}</p>
+<p>Fecha con Pipe date basico (short): {{dob | date:'shortDate'}}</p>
+<p>Fecha con Pipe date basico (full): {{dob | date:'fullDate'}}</p>
+<p>Fecha con Pipe date basico (full): {{dob | date:dateFormat}}</p>
+<button (click)="cambiarFormato()">Cambiar Formato a {{cambio ? 'Full' : 'Short'}}</button>
+
+<!--Concatenar-->
+<p>Fecha con Pipe date basico (full): {{dob | date:dateFormat | uppercase}}</p>
+<p>Fecha con Pipe date basico (full): {{dob | date:dateFormat | lowercase}}</p>
+<p>{{nombre | uppercase}}</p>
+<p>{{nombre | lowercase}}</p>
+
+<!--Pipe Personalizado multiplica-->
+<p>Resultado: {{2 | multiplicar:10}}</p> <!--2 * 10-->
+
+<!--Pipe personalizado calcular puntuacion-->
+<p>{{jugador1 | calcularPuntuacion}}</p>
+<p>{{jugador2 | calcularPuntuacion}}</p>
+<p>{{jugador3 | calcularPuntuacion}}</p>
+
+<!--Pipes decimales-->
+<p>Numero sin pipe: {{numerito}}</p>
+<p>3 decimales: {{numerito | number:'.3-3'}}</p>
+<p>5 decimales: {{numerito | number:'.5-5'}}</p>
+<p>2 enteros y 8 decimales{{numerito | number:'2.8-8'}}</p>
+
+<!--Currentcy-->
+
+<p>Precio carrito {{precioCarrito | currency:'EUR'}}</p>
+<p>Precio carrito {{precioCarrito | currency:'USD'}}</p>
+<p>Precio carrito {{precioCarrito | currency:'EUR':true:'.3-3'}}</p>
+
+<!--objeto a json-->
+<p>{{dyka | json}}</p>
+
+<!--Porcentajes-->
+<p>Porcentaje obtenido: {{cantidad | percent:'2.2-2'}}</p>
+
+<!--Slice-->
+<p>Texto largo:{{texto | slice:0:10}}...</p>
+
+
+
+
