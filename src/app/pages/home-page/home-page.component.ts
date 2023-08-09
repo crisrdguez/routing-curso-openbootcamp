@@ -35,9 +35,9 @@ export class HomePageComponent implements OnInit{
     
 
       //Leemos del estado del historial de navegacion
-      if(history.state.data){
-        console.log(history.state.data);
-        this.contactoSeleccionado = history.state.data;
+      if(history.state.datos){
+        console.log(history.state.datos);
+        this.contactoSeleccionado = history.state.datos;
       }
       
   }

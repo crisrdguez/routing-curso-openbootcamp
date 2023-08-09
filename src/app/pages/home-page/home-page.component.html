@@ -4,7 +4,7 @@
     <h3>Bienvenido al juego del Amigo Invisible</h3>
 
     <ng-container *ngIf="contactoSeleccionado ; else noSeleccionado">
-        <h3>Amigo Invisible: {{contactoSeleccionado.nombre}}</h3>
+        <h3>Amigo Invisible: {{contactoSeleccionado.nombre}}{{contactoSeleccionado.apellido}}</h3>
     
     </ng-container>
     <ng-template #noSeleccionado>
@@ -17,7 +17,10 @@
     <a *ngIf="!token" routerLink="/login">Iniciar Sesion</a>
     
     <button (click)="navegarContacts()">Ver tus contactos</button>
-    
+    <a [routerLink]="['/formulario']">Formulario Basico</a><br>
+    <a [routerLink]="['/formulario-anidado']">Formulario Anidado</a><br>
+    <a [routerLink]="['/formulario-array']">Formulario Array</a><br>
+    <a [routerLink]="['/formulario-validado']">Formulario Validado</a><br>
     <div>
         <p>Filtros:</p>
     <!--Igual a lo anterior pero hecho desde la template-->

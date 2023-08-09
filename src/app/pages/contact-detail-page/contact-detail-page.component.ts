@@ -33,8 +33,8 @@ export class ContactDetailPageComponent implements OnInit{
     );
 
     //vamos a leer tambien del State el contacto
-      if(history.state.data){
-        this.contacto = history.state.data;
+      if(history.state.datos){
+        this.contacto = history.state.datos;
       }
 
       if(history.state.filtro){

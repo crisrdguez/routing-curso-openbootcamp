@@ -18,9 +18,11 @@ export class ContactService {
       let listaFiltrada = this.listaContactos.filter((contacto) => contacto.sexo == sexo);
       return Promise.resolve(listaFiltrada);
 
-    }else if(sexo=='todos')
+    }else if(sexo=='todos'){
+
     return Promise.resolve(this.listaContactos);
-    else{
+    
+    }else{
       return Promise.reject('Filtro no valido');
     }
 

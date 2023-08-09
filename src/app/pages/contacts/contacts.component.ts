@@ -22,7 +22,7 @@ export class ContactsComponent implements OnInit{
 
     let navigationExtras: NavigationExtras = {
       state:{
-        data:contacto
+        datos:contacto
       }
     }
 

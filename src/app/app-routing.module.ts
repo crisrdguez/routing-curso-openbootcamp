@@ -6,6 +6,10 @@ import { ContactsComponent } from './pages/contacts/contacts.component';
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { authGuard } from './guards/auth.guard';
+import { FormularioComponent } from './components/forms/formulario/formulario.component';
+import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
+import { FormularioArrayComponent } from './components/forms/formulario-array/formulario-array.component';
+import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'home'},
@@ -16,12 +20,17 @@ const routes: Routes = [
     ],
     canActivate: [authGuard] //para que no nos deje ir al home si no nos logueamos
   },
+  //FORMULARIOS REACTIVOS
+  {path:'formulario', component:FormularioComponent},
+  {path:'formulario-anidado', component:FormularioAnidadoComponent},
+  {path:'formulario-array', component:FormularioArrayComponent},
+  {path:'formulario-validado', component:FormularioValidadoComponent},
   {path:'contacts',component:ContactsComponent,
     canActivate: [authGuard]
-},
+  },
   {path:'contacts/:id',component:ContactDetailPageComponent,
   canActivate: [authGuard]
-},
+  },
   {path:'**',component:NotFoundPageComponent}
   
 ];

@@ -2,7 +2,7 @@
 
 <!--Listar los contactos y poder navegar por elllos al pinchar en uno de ellos-->
 <div *ngFor="let contacto of listaContactos; let i=index">
-    <div routerLink="{{contacto.id}}" [state]="{data:contacto, filtro:filtroSexo}"><!--[state]="{data:contacto} PARA PODER ACCEDER A SUS DATOS-->
+    <div routerLink="{{contacto.id}}" [state]="{datos:contacto, filtro:filtroSexo}"><!--[state]="{data:contacto} PARA PODER ACCEDER A SUS DATOS-->
         
         <p [ngClass]="{contactoClase:contacto.nombre}">{{contacto.nombre}}</p>
         <button (click)="volverHome(contacto)">Enviar Contacto a Home</button>

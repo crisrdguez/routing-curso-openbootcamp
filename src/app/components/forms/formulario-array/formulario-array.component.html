@@ -1,0 +1,47 @@
+<!--Formulario Array-->
+<form [formGroup]="miFormularioArray">
+
+    <!--Previsualizacion de los valores del formulario-->
+    <h2>Datos en vivo del formulario Array</h2>
+    <!--Usaremos un pipe de angular tipo JSON para pasar un objeto a un JSON y mostrarlo-->
+    <p>{{miFormularioArray.value | json}}</p>
+
+    <!--Campos de nombre y apellidos-->
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Apellidos</mat-label>
+        <input matInput formControlName="apellidos">
+
+    </mat-form-field>
+
+    <!--Campo telefonos - Array con agrupaciones de telefono-->
+
+    <h4>Telefono fijo</h4>
+    <div formArrayName="telefonos"> <!--Mismo nombre que le he puesto dentro del ngOnInit-->
+        <!--Iteramos por cada uno de los telefonos presentes en la lista-->
+       <div *ngFor="let telefono of telefonosFormulario.controls; let i = index" [formGroupName]="i" >
+
+        <p>Telefono - {{i}}</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Prefijo</mat-label>
+            <input matInput formControlName="prefijo">   
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Numero</mat-label>
+            <input matInput formControlName="numero">   
+        </mat-form-field>
+        <button (click)="eliminarTelefono(i)">Eliminar Telefono</button><!--Boton sobre cada uno de los telefonos que lo borrará-->
+
+       </div> 
+
+    </div>
+
+    <!--Boton para inserta telefono-->
+    <button (click)="insertTelefono()">Añadir Telefono</button>
+    
+
+</form>

@@ -1,0 +1,40 @@
+<!--Formulario Anidado-->
+<form [formGroup]="miFormularioAnidado">
+
+    <!--Previsualizacion de los valores del formulario-->
+    <h2>Datos en vivo del formulario Anidado</h2>
+    <!--Usaremos un pipe de angular tipo JSON para pasar un objeto a un JSON y mostrarlo-->
+    <p>{{miFormularioAnidado.value | json}}</p>
+
+    <h4>Telefono fijo</h4>
+    <div formGroupName="telefonoFijo">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Prefijo</mat-label>
+            <input matInput formControlName="prefijo">
+    
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Numero</mat-label>
+            <input matInput formControlName="numero">
+    
+        </mat-form-field>
+
+    </div>
+    <h4>Telefono Movil</h4>
+    <div formGroupName="telefonoMovil">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Prefijo</mat-label>
+            <input matInput formControlName="prefijo">
+    
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Numero</mat-label>
+            <input matInput formControlName="numero">
+    
+        </mat-form-field>
+
+    </div>
+
+</form>
